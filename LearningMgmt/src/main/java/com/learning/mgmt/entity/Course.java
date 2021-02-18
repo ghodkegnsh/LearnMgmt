@@ -36,6 +36,86 @@ public class Course {
 	
 	@OneToMany(mappedBy = "course")
 	private Set<Enrollment> enrollment;
+
+	public Course() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Course(int courseId, String courseName, int courseDuration, LocalDateTime startDate, LocalDateTime endDate,
+			Category category, Set<Enrollment> enrollment) {
+		super();
+		this.courseId = courseId;
+		this.courseName = courseName;
+		this.courseDuration = courseDuration;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.category = category;
+		this.enrollment = enrollment;
+	}
+
+	public int getCourseId() {
+		return courseId;
+	}
+
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
+	}
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public int getCourseDuration() {
+		return courseDuration;
+	}
+
+	public void setCourseDuration(int courseDuration) {
+		this.courseDuration = courseDuration;
+	}
+
+	public LocalDateTime getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDateTime startDate) {
+		this.startDate = startDate;
+	}
+
+	public LocalDateTime getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(LocalDateTime endDate) {
+		this.endDate = endDate;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public Set<Enrollment> getEnrollment() {
+		return enrollment;
+	}
+
+	public void setEnrollment(Set<Enrollment> enrollment) {
+		this.enrollment = enrollment;
+	}
+
+	@Override
+	public String toString() {
+		return "Course [courseId=" + courseId + ", courseName=" + courseName + ", courseDuration=" + courseDuration
+				+ ", startDate=" + startDate + ", endDate=" + endDate + ", category=" + category + ", enrollment="
+				+ enrollment + "]";
+	}
 	
 	
 }

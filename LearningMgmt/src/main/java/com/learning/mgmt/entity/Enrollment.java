@@ -31,4 +31,67 @@ public class Enrollment {
 	@ManyToOne
 	@JoinColumn(name = "courseId", nullable = false)
 	private Course course;
+
+	public Enrollment() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Enrollment(int enrollId, LocalDateTime enrollmentDate, String status, User user, Course course) {
+		super();
+		this.enrollId = enrollId;
+		this.enrollmentDate = enrollmentDate;
+		this.status = status;
+		this.user = user;
+		this.course = course;
+	}
+
+	public int getEnrollId() {
+		return enrollId;
+	}
+
+	public void setEnrollId(int enrollId) {
+		this.enrollId = enrollId;
+	}
+
+	public LocalDateTime getEnrollmentDate() {
+		return enrollmentDate;
+	}
+
+	public void setEnrollmentDate(LocalDateTime enrollmentDate) {
+		this.enrollmentDate = enrollmentDate;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	@Override
+	public String toString() {
+		return "Enrollment [enrollId=" + enrollId + ", enrollmentDate=" + enrollmentDate + ", status=" + status
+				+ ", user=" + user + ", course=" + course + "]";
+	}
+	
+	
+	
 }
