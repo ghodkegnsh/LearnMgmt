@@ -20,7 +20,7 @@ public class Category {
 	private int categoryId;
 	@Column
 	private String categoryName;
-	
+
 	@OneToMany(mappedBy = "category")
 	private Set<Course> course;
 
@@ -64,8 +64,5 @@ public class Category {
 	public String toString() {
 		return "Category [categoryId=" + categoryId + ", categoryName=" + categoryName + ", course=" + course + "]";
 	}
-	
-	
-	
-	
+
 }

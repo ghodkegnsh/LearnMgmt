@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class Enrollment {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
@@ -23,7 +23,7 @@ public class Enrollment {
 	private LocalDateTime enrollmentDate;
 	@Column
 	private String status;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "userId", nullable = false)
 	private User user;
@@ -34,7 +34,7 @@ public class Enrollment {
 
 	public Enrollment() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Enrollment(int enrollId, LocalDateTime enrollmentDate, String status, User user, Course course) {
@@ -91,7 +91,5 @@ public class Enrollment {
 		return "Enrollment [enrollId=" + enrollId + ", enrollmentDate=" + enrollmentDate + ", status=" + status
 				+ ", user=" + user + ", course=" + course + "]";
 	}
-	
-	
-	
+
 }

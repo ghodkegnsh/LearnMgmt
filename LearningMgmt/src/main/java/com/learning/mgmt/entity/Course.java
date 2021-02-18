@@ -19,27 +19,27 @@ public class Course {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column 
+	@Column
 	private int courseId;
-	@Column 
+	@Column
 	private String courseName;
-	@Column 
+	@Column
 	private int courseDuration;
-	@Column 
+	@Column
 	private LocalDateTime startDate;
-	@Column 
+	@Column
 	private LocalDateTime endDate;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "categoryId", nullable = false)
 	private Category category;
-	
+
 	@OneToMany(mappedBy = "course")
 	private Set<Enrollment> enrollment;
 
 	public Course() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Course(int courseId, String courseName, int courseDuration, LocalDateTime startDate, LocalDateTime endDate,
@@ -116,6 +116,5 @@ public class Course {
 				+ ", startDate=" + startDate + ", endDate=" + endDate + ", category=" + category + ", enrollment="
 				+ enrollment + "]";
 	}
-	
-	
+
 }
